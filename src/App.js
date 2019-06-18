@@ -22,5 +22,9 @@ function App() {
     </div>
   );
 }
+<<<<<<< HEAD
 console.log('Helo')
+=======
+
+>>>>>>> 2d064292a5ca507134ee1398018583fd8e8d4352
 export default App;
