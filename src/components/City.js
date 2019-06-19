@@ -37,11 +37,11 @@ class City extends Component {
           {this.state.open && (
             <div class="container">
               <ul>
-                <li>Brooklyn</li>
-                <li>Bronx</li>
-                <li>Manhattan</li>
-                <li>Staten Island</li>
-                <li>Queens</li>
+              <button type="button" class="btn btn-md">Brooklyn</button>
+              <button type="button" class="btn btn-md">Bronx</button>
+              <button type="button" class="btn btn-md">Manhattan</button>
+              <button type="button" class="btn btn-md">Staten Island</button>
+              <button type="button" class="btn btn-md">Queens</button>
 
               </ul>
             </div>
