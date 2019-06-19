@@ -14,38 +14,48 @@ body {
 }
 
 .header-color{
-  font-size: 40px;
-  font-Weight: 'bold',
-
+  position: relative;
+  font-size: 50px;
+  font-Weight: 'bold';
+  margin-left: 500px;
+  margin-top: 20px
   
-
 }
 
 .banner-text{
-  font-size: 16px;
+  position: relative;
+  margin-left: 90px;
+  font-size: 20px;
   position: relative;
   text-align: left;
 
 }
 .Home{
+  position: relative;
+  margin-left: 90px;
   font-size: 25px;
-  color: #cc7979;
+  color: black;
 }
 
 .style{
-  color: #696969;
+  color:#696969;
+  
 }
 .Image{
-  width: 400px;
+  position: relative;
+  margin-left: 30px;
+  width: 600px;
   height: 300px;
   top: -15px;
+  margin-top: 90px;
+  
 }
 .City{
   position: relative;
   float: right;
-margin-right: 90px;
+margin-right: 70px;
 font-size: 30px;
-  color: #ce7676;
+  color: black;
 }
 .City-button{
   position: relative;

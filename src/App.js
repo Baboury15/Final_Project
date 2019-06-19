@@ -25,11 +25,12 @@ class App extends React.Component {
   render(){return (
     <div>
    
-      <Header>
-      <Header className="header-color" title={<Link style={{textDecoration: 'none',color:'#cc7979' }} to="/">Sports Finder</Link>} scroll>
-
-
-       <Navigation>
+    
+        
+      <Header className="header-color" title={<Link style={{textDecoration: 'none',color:'black' }} to="/">Sports Finder</Link>} scroll>
+      </Header>
+<div className= "nav-bar">
+       <Navigation >
 
       <Link className ="Home" to="/City">City</Link>
       
@@ -49,11 +50,12 @@ class App extends React.Component {
           
         </Content>
 
-      
+     
       </Navigation>
-      </Header>
+      </div >
+     
        
-      </Header>
+     
     
     
 

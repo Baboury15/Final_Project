@@ -31,6 +31,7 @@ class City extends Component {
       <div className="App">
         <div className="container" ref={this.container}>
           <button type="button" class="button" onClick={this.handleButtonClick}>
+            
             <img className = "Image2" src ={require("./dropdown.png")}/>
           </button>
           {this.state.open && (
