@@ -26,14 +26,14 @@ class App extends React.Component {
     <div>
    
       <Header>
-      <Header className="header-color" title={<Link style={{textDecoration: 'none',color:'#696969' }} to="/">Sports Finder</Link>} scroll>
+      <Header className="header-color" title={<Link style={{textDecoration: 'none',color:'#cc7979' }} to="/">Sports Finder</Link>} scroll>
 
 
        <Navigation>
 
-      <Link className ="Home" to="/Home">Home</Link>
+      <Link className ="Home" to="/City">City</Link>
       
-      <Link className ="City" to="/City">City</Link>
+      <Link className ="City" to="/Home">Home</Link>
       
  
 

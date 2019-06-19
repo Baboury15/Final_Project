@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: linear-gradient(to right, rgb(6, 6, 7), rgb(68, 116, 187));
+  background: linear-gradient(to right, rgb(76, 76, 156), rgb(68, 116, 187));
 }
 .message{
   position: relative;
@@ -29,7 +29,7 @@ body {
 }
 .Home{
   font-size: 25px;
-  color: #696969;
+  color: #cc7979;
 }
 
 .style{
@@ -43,9 +43,9 @@ body {
 .City{
   position: relative;
   float: right;
-margin-right: 100px;
+margin-right: 90px;
 font-size: 30px;
-  color: #696969;
+  color: #ce7676;
 }
 .City-button{
   position: relative;

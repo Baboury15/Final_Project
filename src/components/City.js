@@ -1,67 +1,54 @@
 import React, { Component } from 'react';
 
-class City extends Component {
-  constructor() {
-    super();
-    
-    this.state = {
-      showMenu: false,
-    };
-    
-    this.showMenu = this.showMenu.bind(this);
-    this.closeMenu = this.closeMenu.bind(this);
-  }
-  
-  showMenu(event) {
-    event.preventDefault();
-    
-    this.setState({ showMenu: true }, () => {
-      document.addEventListener('click', this.closeMenu);
-    });
-  }
-  
-  closeMenu(event) {
-    
-    if (!this.dropdownMenu.contains(event.target)) {
-      
-      this.setState({ showMenu: false}, () => {
-        document.removeEventListener('click', this.closeMenu);
-      });  
-      
-    }
-  }
 
+class City extends Component {
+  container = React.createRef();
+  state = {
+    open: false,
+  };
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside);
+  }
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside);
+  }
+  handleClickOutside = event => {
+    if (this.container.current && !this.container.current.contains(event.target)) {
+      this.setState({
+        open: false,
+      });
+    }
+  };
+  handleButtonClick = () => {
+    this.setState(state => {
+      return {
+        open: !state.open,
+      };
+    });
+  };
   render() {
     return (
-      <div>
-        <button onClick={this.showMenu}>
-          Cities
-        </button>
-        
-        {
-          this.state.showMenu
-            ? (
-              <div
-                className="menu"
-                ref={(element) => {
-                  this.dropdownMenu = element;
-                }}
-              >
-                <button>Bronx</button>
-                <button>Brooklyn</button>
-                <button> Queens</button>
-                <button> Manhattan</button>
-                <button> staten Island</button>
+      <div className="App">
+        <div className="container" ref={this.container}>
+          <button type="button" class="button" onClick={this.handleButtonClick}>
+            <img className = "Image2" src ={require("./dropdown.png")}/>
+          </button>
+          {this.state.open && (
+            <div class="container">
+              <ul>
+                <li>Brooklyn</li>
+                <li>Bronx</li>
+                <li>Manhattan</li>
+                <li>Staten Island</li>
+                <li>Queens</li>
 
-
-              </div>
-            )
-            : (
-              null
-            )
-        }
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
     );
   }
 }
+
 export default City;
