@@ -1,30 +1,71 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Particles from 'react-particles-js';
+import { Link } from 'react-router-dom';
+import Home from './components/Home'
+import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
+import Main from './components/main';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+
+const particleOpt = {
+  particles: {
+    number: {
+      value: 150,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    }
+  }
+}
+
+class App extends React.Component {
+  render(){return (
+    <div>
+   
+      <Header>
+      <Header className="header-color" title={<Link style={{textDecoration: 'none',color:'#696969' }} to="/">Sports Finder</Link>} scroll>
+
+
+       <Navigation>
+
+      <Link className ="Home" to="/Home">Home</Link>
+      
+      <Link className ="City" to="/City">City</Link>
+      
+ 
+
+
+      <Content>
+
+        
+            <div className="page-content" />
+            
+            <Main/>
+            
+          <div/>
+          
+        </Content>
+
+      
+      </Navigation>
+      </Header>
+       
+      </Header>
+    
+    
+
+<Particles 
+         params={particleOpt} />
+         
+
     </div>
+   
   );
 }
-<<<<<<< HEAD
-console.log('Helo')
-=======
 
->>>>>>> 2d064292a5ca507134ee1398018583fd8e8d4352
+}
+
 export default App;

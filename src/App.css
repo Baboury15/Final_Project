@@ -1,0 +1,58 @@
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to right, rgb(6, 6, 7), rgb(68, 116, 187));
+}
+.message{
+  position: relative;
+  margin: 150px;
+  font-size: 40px;
+}
+
+.header-color{
+  font-size: 40px;
+  font-Weight: 'bold',
+
+  
+
+}
+
+.banner-text{
+  font-size: 16px;
+  position: relative;
+  text-align: left;
+
+}
+.Home{
+  font-size: 25px;
+  color: #696969;
+}
+
+.style{
+  color: #696969;
+}
+.Image{
+  width: 400px;
+  height: 300px;
+  top: -15px;
+}
+.City{
+  position: relative;
+  float: right;
+margin-right: 100px;
+font-size: 30px;
+  color: #696969;
+}
+.City-button{
+  position: relative;
+  float: right;
+margin-right: 100px;
+font-size: 30px;
+  color: #696969;
+
+
+}
