@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Cell } from 'react-mdl';
+import NameForm from './nameform';
+
 
 
 class Home extends Component {
@@ -17,13 +19,7 @@ class Home extends Component {
               /> */}
 <img className= "Image" src={require('./image.jpg')}/>
 
-
-
-              
-             
-
-
-            <div className="banner-text">
+            <div className="banner-text text-warning">
     <h1> Welcome to sport avtivities finder!!</h1>
 
          
