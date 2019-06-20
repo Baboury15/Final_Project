@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import App from '../App'
 
-
-class City extends Component {
+class Cities extends Component {
   container = React.createRef();
   state = {
     open: false,
@@ -19,6 +19,7 @@ class City extends Component {
       });
     }
   };
+  
   handleButtonClick = () => {
     this.setState(state => {
       return {
@@ -26,22 +27,49 @@ class City extends Component {
       };
     });
   };
+
+  updateNameBrooklyn = (event ) =>{
+console.log("Brooklyn ")
+event.preventDefault();
+
+let activities_data = {
+  name: "Brooklyn"
+
+}
+var request = new Request ('http://localhost:3000/activities',{
+
+method:'POST', 
+headers : new Headers ({ 'Content-Type': 'application/json'}),
+body :JSON.stringify(activities_data)
+});
+fetch(request)
+.then(function(response){
+  response.json 
+  .then(function(data){
+  console.log(data)
+  })
+})
+.catch(function(err){
+  console.log(err)
+})
+
+  }
   render() {
     return (
       <div className="App">
         <div className="container" ref={this.container}>
-          <button type="button" class="button" onClick={this.handleButtonClick}>
+          <button type="button" class="button" onClick={this.handleButtonClick.bind(this)}>
             
-            <img className = "Image2" src ={require("./dropdown.png")}/>
+            <img className = "dropdown" src ={require("./dropdown.png")}/>
           </button>
           {this.state.open && (
             <div class="container">
               <ul>
-                <li>Brooklyn</li>
-                <li>Bronx</li>
-                <li>Manhattan</li>
-                <li>Staten Island</li>
-                <li>Queens</li>
+            <button type="button" class=" btn-md" onClick = {this.updateNameBrooklyn.bind(this)} >Brooklyn</button>
+              <button type="button" class=" btn-md">Bronx</button>
+              <button type="button" class=" btn-md">Manhattan</button>
+              <button type="button" class=" btn-md">Staten Island</button>
+              <button type="button" class=" btn-md">Queens</button>
 
               </ul>
             </div>
@@ -52,4 +80,4 @@ class City extends Component {
   }
 }
 
-export default City;
+export default Cities
