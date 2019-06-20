@@ -13,6 +13,11 @@ let pool = new pg.Pool({
     user:'postgres'
 });
 
+
+pool.connect()
+.then(res => console.log('connected'))
+.catch( err => console.log(err));
+
 const PORT = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -24,27 +29,27 @@ app.use(function(request, response, next) {
     next();
   });
 
-  app.get('/activities', function(request, response){
+  app.post('/activities', function(request, response){
 
-    var name = request.body.name;
+   var name = request.body.name;
+   console.log(name)
 
-    pool.connect((err,db,done)=>{
-        if(err){
-            return console.log(err)
-        }
-        else{
-            db.query('SELECT * FROM activities where id = (select id from city where name like %'+name+'%)', function(err, table){
-                done();
+    // pool.connect((err,db,done)=>{
+    //     if(err){
+    //         return console.log(err)
+    //     }
+    //     else{
+            pool.query("SELECT * FROM activities where city_id = (SELECT id FROM city where name LIKE \'%"+name+"%\')", function(err, table){
+                // done();
                 if(err){
                   return console.log(err)
                 }
                 else{
-                    return response.status(200).send(table.rows)
+                    return response.status(200).send(table.rows);
                 }
             })
-        }
-    })
-})
+        })
+
 
 
 
