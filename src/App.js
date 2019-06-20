@@ -19,6 +19,7 @@ const particleOpt = {
     }
   }
 }
+console.log('test')
 
 class App extends React.Component {
 
@@ -167,18 +168,16 @@ class App extends React.Component {
   
   render(){
     let activities = this.state.activities;
+
+
+    // let elems = [];
+    //   for(let e of this.state.activities) {
+    //     elems.push();
+    //   }
     return (
     <div>
-   
-    
-        
+      
       <Header className="header-color" title={<Link style={{textDecoration: 'none',color:'black' }} to="/">Sports Finder</Link>} scroll>
-      {/* <img className= "Logo" src={require('./soccer.jpeg')}/>
-
-      <img className= "pimp" src={require('./giphy.webp')}/>
-      <img className= "ball" src={require('./basketball.webp')}/> */}
-
-
       </Header>
 
 <div className= "nav-bar">
@@ -189,8 +188,6 @@ class App extends React.Component {
       <Link className ="City" to="/Home">Home</Link>
       
    <Content>
-
-        
             <div className="page-content" />
             
             <Main/>
@@ -202,14 +199,7 @@ class App extends React.Component {
      
       </Navigation>
       </div >
-     
-       
-     
-    
-    
-
 <Particles 
-
          params={particleOpt} />
          
           <div class="container">
@@ -225,14 +215,7 @@ class App extends React.Component {
             {activities.map(activities =>activities.name)}
              </ul>
             </div>
-         
-         
-         
-
     </div>
-    
-    
-   
   );
 }
 
