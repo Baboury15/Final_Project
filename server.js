@@ -12,3 +12,49 @@ let pool = new pg.Pool({
     host: 'localhost',
     user:'postgres'
 });
+
+const PORT = 3000;
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(morgan('dev'));
+
+app.use(function(request, response, next) {
+    response.header("Access-Control-Allow-Origin", "*");
+    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
+  app.get('/activities', function(request, response){
+
+    var name = request.body.name;
+
+    pool.connect((err,db,done)=>{
+        if(err){
+            return console.log(err)
+        }
+        else{
+            db.query('SELECT * FROM activities where id = (select id from city where name like %'+name+'%)', function(err, table){
+                done();
+                if(err){
+                  return console.log(err)
+                }
+                else{
+                    return response.status(200).send(table.rows)
+                }
+            })
+        }
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+  app.listen(PORT, () => console.log('listining on port ' + PORT));
