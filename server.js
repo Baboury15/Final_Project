@@ -5,8 +5,8 @@ let pg = require('pg');
 let app= express();
 
 let pool = new pg.Pool({
-    port: 5432,
-    password: 'Tiger12345',
+    port: 5433,
+    password: 'papamaman',
     database: 'newyork',
     max: 10,
     host: 'localhost',

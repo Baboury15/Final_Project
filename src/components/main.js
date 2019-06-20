@@ -15,7 +15,6 @@ const Main = () => (
 
  <Route exact path="/City" component={City} />
  <Route exact path="/Home" component={Home} />
- <Route exact path="/MyWindowPortal" component={Home} />
 
 
     

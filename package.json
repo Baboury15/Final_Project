@@ -1,10 +1,13 @@
 {
-  "name": "sport1",
+  "name": "sport2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@material/toolbar": "^2.3.0",
     "bootstrap": "^4.3.1",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "pg": "^7.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-mdl": "^1.11.0",
@@ -32,5 +35,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Baboury15/Final_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Baboury15/Final_Project/issues"
+  },
+  "homepage": "https://github.com/Baboury15/Final_Project#readme"
 }

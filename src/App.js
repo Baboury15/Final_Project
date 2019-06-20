@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Home from './components/Home'
 import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
 import Main from './components/main';
-import {BrowserRouter as Router,Redirect} from 'react-router-dom'
+import {BrowserRouter as Router,Redirect} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const particleOpt = {

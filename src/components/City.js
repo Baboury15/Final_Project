@@ -39,12 +39,12 @@ let activities_data = {
 var request = new Request ('http://localhost:3000/activities',{
 
 method:'POST', 
-headers : new Headers ({ 'Content-Type': 'application/json'}),
+headers : new Headers ({ 'Content-Type': 'application/json', 'Accept': 'application/json' }),
 body :JSON.stringify(activities_data)
 });
 fetch(request)
 .then(function(response){
-  response.json 
+  response.json ()
   .then(function(data){
   console.log(data)
   })
@@ -52,8 +52,13 @@ fetch(request)
 .catch(function(err){
   console.log(err)
 })
+  
 
-  }
+  
+
+}
+
+
   render() {
     return (
       <div className="App">
@@ -65,19 +70,11 @@ fetch(request)
           {this.state.open && (
             <div class="container">
               <ul>
-<<<<<<< HEAD
             <button type="button" class=" btn-md" onClick = {this.updateNameBrooklyn.bind(this)} >Brooklyn</button>
               <button type="button" class=" btn-md">Bronx</button>
               <button type="button" class=" btn-md">Manhattan</button>
               <button type="button" class=" btn-md">Staten Island</button>
               <button type="button" class=" btn-md">Queens</button>
-=======
-              <button type="button" class="btn btn-md">Brooklyn</button>
-              <button type="button" class="btn btn-md">Bronx</button>
-              <button type="button" class="btn btn-md">Manhattan</button>
-              <button type="button" class="btn btn-md">Staten Island</button>
-              <button type="button" class="btn btn-md">Queens</button>
->>>>>>> 3de762c442bbb4d6da1160f8ecb123ebdcd8f661
 
               </ul>
             </div>
