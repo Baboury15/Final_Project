@@ -7,7 +7,6 @@ import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
 import Main from './components/main';
 import {BrowserRouter as Router,Redirect} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
-import ActivityCard from './activitycard'
 
 const particleOpt = {
   particles: {
@@ -27,7 +26,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      sport:[],
+      
      activities : []
     }
   }
@@ -169,15 +168,8 @@ class App extends React.Component {
 
   
   render(){
-    const ActivityCards = this.state.sport.map(sport => <ActivityCard
-      sport={sport}/>)
+    
     let activities = this.state.activities;
-
-
-    // let elems = [];
-    //   for(let e of this.state.activities) {
-    //     elems.push();
-    //   }
     return (
     <div>
       
@@ -219,7 +211,7 @@ class App extends React.Component {
 
             {activities.map(activities =>activities.name)}
              </ul>
-             {ActivityCards}
+            
             </div>
     </div>
   );
