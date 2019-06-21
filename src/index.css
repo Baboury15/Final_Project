@@ -29,14 +29,15 @@ label {
 
 }
 
-input {
+.input {
+  top: 30%;
+  bottom: 480px;
   padding: 12px 20px;
   background: rgb(255, 255, 255);
-  border: - none;
   cursor: pointer;
   -webkit-border-radius: 5px;
-  border-radius: 5px;
-  margin: 8px 0;
+  border-radius: 30px;
+  margin: 20px 10px;
   box-sizing: border-box;
 }
 
@@ -47,20 +48,9 @@ input {
   padding: 12px 30px;
   float: right;
   bottom: 10%;
-  top: 480px;
+  top: 350px;
 
 }
 
-.nameform {
-  position: relative;
-  margin-right: 10px;
-  box-sizing: border-box;
-  padding: 12px 30px;
-  float: right;
-  bottom: 60%;
-  top: 20%;
-  text-decoration-color: black;
-  text-decoration-style: double;
 
-}
 

@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
 import Main from './components/main';
 import NameForm from './components/nameform';
+import FooterForm from './components/footerform';
+import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+
+
 
 
 const particleOpt = {
@@ -15,6 +19,7 @@ const particleOpt = {
         enable: true,
         value_area: 800
       }
+
     }
   }
 
@@ -32,7 +37,10 @@ class App extends React.Component {
 
       <Link className ="Home" to="/City">Cities</Link>  
       {/* <Link className ="City" to="/Home">Home</Link> */}
-      <Link className ="nameform" to="/nameform">Reviews</Link>
+      <Link className ="nameform" to="/nameform">Leave Us a Comment</Link>
+      <Link className ="footerform" to="/footerform"></Link>
+
+      <FooterForm />
 
       <Content>
             <div className="page-content" />
@@ -47,7 +55,6 @@ class App extends React.Component {
 <Particles 
          params={particleOpt} />
          
-
     </div> 
    
   );

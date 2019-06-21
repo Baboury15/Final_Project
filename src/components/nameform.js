@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FooterForm from './footerform';
 
 class NameForm extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class NameForm extends Component {
     alert('A value was submitted: ' + this.state.value);
     event.preventDefault();
   }
-
+  
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -37,10 +38,11 @@ class NameForm extends Component {
           </select>
           Comment:
           <input type="text"  />
-          
+
         </label>
         <input className ="submit" type="submit" value="Submit" />
       </form>
+
     );
   }
 }
