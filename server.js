@@ -49,17 +49,4 @@ app.use(function(request, response, next) {
                 }
             })
         })
-
-
-
-
-
-
-
-
-
-
-
-
-
   app.listen(PORT, () => console.log('listining on port ' + PORT));
