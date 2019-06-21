@@ -22,9 +22,10 @@ class City extends Component {
          activities : []
         }
       }
-      componentDidMount() {
-        document.addEventListener("mousedown", this.handleClickOutside);
-      }
+      // componentDidMount() {
+      //   console.log(this);
+      //   document.addEventListener("mousedown", this.handleClickOutside);
+      // }
       componentWillUnmount() {
         document.removeEventListener("mousedown", this.handleClickOutside);
       }
@@ -45,6 +46,8 @@ class City extends Component {
       };
     
       componentDidMount(){
+       // console.log(this);
+        document.addEventListener("mousedown", this.handleClickOutside);
         console.log('COMPONENT HAS MOUNTED')
         fetch('http://localhost:3000/activities')
         .then(function(response){
@@ -69,11 +72,13 @@ class City extends Component {
         body :JSON.stringify(activities_data)
         });
         fetch(request)
-        .then(function(response){
+        .then((response)=>{
           //console.log('hello')
+          console.log(this);
           response.json()
-          .then(function(activities_data){
-          console.log(activities_data)
+          .then((data)=>{
+          console.log(data)
+          this.setState({activities: data});
           })
         })
         .catch(function(err){
@@ -94,11 +99,13 @@ class City extends Component {
         body :JSON.stringify(activities_data)
         });
         fetch(request)
-        .then(function(response){
+        .then((response)=>{
           //console.log('hello')
+          console.log(this);
           response.json()
-          .then(function(activities_data){
-          console.log(activities_data)
+          .then((data)=>{
+          console.log(data)
+          this.setState({activities: data});
           })
         })
         .catch(function(err){
@@ -117,12 +124,15 @@ class City extends Component {
         headers : new Headers ({ 'Content-Type': 'application/json'}),
         body :JSON.stringify(activities_data)
         });
+
         fetch(request)
-        .then(function(response){
+        .then((response)=>{
           //console.log('hello')
+          console.log(this);
           response.json()
-          .then(function(activities_data){
-          console.log(activities_data)
+          .then((data)=>{
+          console.log(data)
+          this.setState({activities: data});
           })
         })
         .catch(function(err){
@@ -141,12 +151,15 @@ class City extends Component {
         headers : new Headers ({ 'Content-Type': 'application/json'}),
         body :JSON.stringify(activities_data)
         });
+
         fetch(request)
-        .then(function(response){
+        .then((response)=>{
           //console.log('hello')
+          console.log(this);
           response.json()
-          .then(function(activities_data){
-          console.log(activities_data)
+          .then((data)=>{
+          console.log(data)
+          this.setState({activities: data});
           })
         })
         .catch(function(err){
@@ -161,69 +174,84 @@ class City extends Component {
         let activities_data = {
           name: 'Queens'
         };
+
         var request = new Request('http://localhost:3000/activities',{
-        method:'POST', 
-        headers : new Headers ({ 'Content-Type': 'application/json'}),
-        body :JSON.stringify(activities_data)
+          method:'POST', 
+          headers : new Headers ({ 'Content-Type': 'application/json'}),
+          body :JSON.stringify(activities_data)
         });
+        
         fetch(request)
-        .then(function(response){
+        .then((response)=>{
           //console.log('hello')
+          console.log(this);
           response.json()
-          .then(function(activities_data){
-          console.log(activities_data)
+          .then((data)=>{
+          console.log(data)
+          this.setState({activities: data});
           })
         })
         .catch(function(err){
           console.log(err)
         })
-          }
+    }
 
 
   render() {
-    let activities = this.state.activities;
+    // console.log (this.state.activities)
+    
+    const act = this.state.activities.map(activity => <p>{activity.name}</p>)
+    const actLocation = this.state.activities.map(activity => <p className = " abc">{activity.name}  {activity.location}   {activity.review}</p>)
+    const actReview = this.state.activities.map(activity => <p>{activity.review}</p>)
+    console.log(act)
+
+
     return (
+
+      
       <div className="App">
         <div className="container" ref={this.container}>
           <button type="button" class="btn btn-md" onClick={this.handleButtonClick}>
 
-            <img className = "Image2" src ={require("./dropdown.png")}/>
+            <img className = "Image2" src ={require("./dropdown.jpg")}/>
           </button>
           {this.state.open && (
             <div class="container">
               <ul>
               <div class="dropdown">
-  <button class="btn btn-secondary btn-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick={this.updateNameBrooklyn.bind(this)}>
+  <button class="btn btn-secondary btn-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick={this.updateNameBrooklyn}>
     Brooklyn
   </button>
 </div>
 <div class="dropdown1">
-  <button class="btn btn-secondary btn-lg" type="button1" id="dropdownMenuButton" data-toggle="dropdown1" aria-haspopup="true" aria-expanded="false" onClick={this.updateNameBronx.bind(this)}>
+  <button class="btn btn-secondary btn-lg" type="button1" id="dropdownMenuButton" data-toggle="dropdown1" aria-haspopup="true" aria-expanded="false" onClick={this.updateNameBronx}>
     Bronx
   </button>
 </div>
 <div class="dropdown2">
-  <button class="btn btn-secondary btn-lg" type="button2" id="dropdownMenuButton" data-toggle="dropdown2" aria-haspopup="true" aria-expanded="false" onClick={this.updateNameManhattan.bind(this)}>
+  <button class="btn btn-secondary btn-lg" type="button2" id="dropdownMenuButton" data-toggle="dropdown2" aria-haspopup="true" aria-expanded="false" onClick={this.updateNameManhattan}>
     Manhattan
   </button>
 </div>
 <div class="dropdown3">
-  <button class="btn btn-secondary btn-lg" type="button3" id="dropdownMenuButton" data-toggle="dropdown3" aria-haspopup="true" aria-expanded="false" onClick={this.updateNameStatenIsland.bind(this)}>
+  <button class="btn btn-secondary btn-lg" type="button3" id="dropdownMenuButton" data-toggle="dropdown3" aria-haspopup="true" aria-expanded="false" onClick={this.updateNameStatenIsland}>
     Staten Island
   </button>
 </div>
 <div class="dropdown4">
-  <button class="btn btn-secondary btn-lg" type="button4" id="dropdownMenuButton" data-toggle="dropdown4" aria-haspopup="true" aria-expanded="false" onClick={this.updateNameQueens.bind(this)}>
+  <button class="btn btn-secondary btn-lg" type="button4" id="dropdownMenuButton" data-toggle="dropdown4" aria-haspopup="true" aria-expanded="false" onClick={this.updateNameQueens}>
     Queens
   </button>
 </div>
-
+    
               </ul>
             </div>
           )}
+            {/* {act}  */}
+            {actLocation}
+            {/* {actReview} */}
+          {/* {activities.map(activities =>activities.name)} */}
 
-          {activities.map(activities =>activities.name)}
-          
         </div>
       </div>
     );
